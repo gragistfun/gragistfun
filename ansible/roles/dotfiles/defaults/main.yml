@@ -1,0 +1,4 @@
+dotfile_dir: "{{ lookup('env', 'HOME') }}/.setup/dotfiles"
+target_dir: "{{ lookup('env', 'HOME') }}"
+
+blacklist: []

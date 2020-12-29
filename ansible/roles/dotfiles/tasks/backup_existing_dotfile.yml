@@ -1,0 +1,15 @@
+- name: Check if dotfile target exists
+  stat:
+    path: "{{ dotfile_target_path }}"
+  register: dotfile_target
+
+- name: Check if dotfile target backup exists
+  stat:
+    path: "{{ dotfile_target_backup_path }}"
+  register: dotfile_target_backup
+
+- name: Backup if dotfile target exists but no previous backup
+  copy:
+    src: "{{ dotfile_target_path }}"
+    dest: "{{ dotfile_target_backup_path }}"
+  when: dotfile_target.stat.exists and not dotfile_target.stat.islnk and not dotfile_target_backup.stat.exists

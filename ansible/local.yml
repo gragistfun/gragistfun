@@ -2,4 +2,7 @@
   connection: local
 
   roles:
-  - packages
+    - role: dotfiles
+      vars:
+        whitelist: []
+        blacklist: []

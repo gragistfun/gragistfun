@@ -1,0 +1,6 @@
+- name: Symlink files
+  file:
+    src: "{{ dotfile.path }}"
+    dest: "{{ dotfile_target_path }}"
+    state: link
+    force: yes
