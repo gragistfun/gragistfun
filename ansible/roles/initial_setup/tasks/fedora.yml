@@ -1,3 +1,9 @@
+- name: Update system
+  dnf:
+    name: '*' 
+    state: latest
+    update_cache: yes
+
 - name: Setup RPM-Fusion
   block:
     - name: Enable RPM-Fusion repositories
@@ -15,9 +21,3 @@
       loop:
         - '@core'
         - '@sound-and-video'
-
-- name: Update system
-  dnf:
-    name: '*' 
-    state: latest
-    update_cache: yes
