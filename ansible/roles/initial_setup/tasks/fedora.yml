@@ -1,0 +1,25 @@
+- name: Setup RPM-Fusion
+  block:
+    - name: Enable RPM-Fusion repositories
+      yum:
+        name: "{{ item }}"
+      loop:
+        - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts.distribution_major_version }}.noarch.rpm"
+        - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts.distribution_major_version }}.noarch.rpm"
+
+    - name: Update groups
+      dnf:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - '@core'
+        - '@sound-and-video'
+
+  become: yes
+
+- name: Update system
+  dnf:
+    name: '*' 
+    state: latest
+    update_cache: yes
+  become: yes

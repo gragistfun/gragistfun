@@ -1,8 +1,17 @@
-- hosts: localhost
+- name: Initial setup
+  hosts: localhost
+  connection: local
+
+  roles:
+  - role: initial_setup
+
+  tags: [initial]
+
+- name: Link dotfiles
+  hosts: localhost
   connection: local
 
   roles:
     - role: dotfiles
       vars:
-        whitelist: []
         blacklist: []
