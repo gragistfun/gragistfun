@@ -5,8 +5,8 @@
   roles:
   - role: initial_setup
 
-  tags: [initial]
   become: yes
+  tags: [initial, sudo]
 
 - name: Install packages
   hosts: localhost
@@ -24,6 +24,7 @@
       packages: "{{ package_config.packages }}"
   
   become: yes
+  tags: [sudo]
 
 - name: Link dotfiles
   hosts: localhost
