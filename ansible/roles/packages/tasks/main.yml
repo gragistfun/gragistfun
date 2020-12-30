@@ -1,5 +1,6 @@
-- name: Install htop
-  become: yes
+- name: Install packages
   package:
-    name: htop
+    name: "{{ item.package_name[ansible_facts.distribution] }}" 
     state: latest
+  when: ansible_facts.distribution in item.package_name
+  loop: "{{ packages }}"

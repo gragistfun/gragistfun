@@ -7,6 +7,23 @@
 
   tags: [initial]
 
+- name: Install packages
+  hosts: localhost
+  connection: local
+
+  pre_tasks:
+  - name: Load package config
+    include_vars:
+      file: vars/packages.yml
+      name: package_config
+
+  roles:
+  - role: packages
+    vars:
+      packages: "{{ package_config.packages }}"
+  
+  become: yes
+
 - name: Link dotfiles
   hosts: localhost
   connection: local
