@@ -15,11 +15,8 @@
         - '@core'
         - '@sound-and-video'
 
-  become: yes
-
 - name: Update system
   dnf:
     name: '*' 
     state: latest
     update_cache: yes
-  become: yes

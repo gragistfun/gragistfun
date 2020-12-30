@@ -6,6 +6,7 @@
   - role: initial_setup
 
   tags: [initial]
+  become: yes
 
 - name: Install packages
   hosts: localhost
