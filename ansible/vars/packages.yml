@@ -1,21 +1,33 @@
 packages:
   - name: alacritty
-    description: Terminal-Emulator written in rust
+    description: Terminal-Emulator written in Rust
     package_name:
       Fedora: alacritty
   - name: zsh
-    description:  zsh shell
+    description: zsh shell
     package_name:
       Fedora: zsh
   - name: tmux
-    description:  Terminal system monitor
+    description: Terminal system monitor
     package_name:
       Fedora: htop
   - name: vim
-    description:  Text Editor
+    description: Text Editor
     package_name:
       Fedora: vim
   - name: Krusader
-    description:  Total Commander like file manager
+    description: Total Commander like file manager
     package_name:
       Fedora: krusader
+  - name: ripgrep
+    description: Faster alternative to grep written in Rust
+    package_name:
+      Fedora: ripgrep
+  - name: fd
+    description: find alternative written in Rust
+    package_name:
+      Fedora: fd-find
+  - name: bat
+    description: cat alternative written in Rust
+    package_name:
+      Fedora: bat
