@@ -7,8 +7,11 @@ export ZSH_CACHE_DIR=$HOME/.cache/zsh
 setopt AUTO_PARAM_SLASH # add slash after dir completion
 setopt HIST_VERIFY # confirm history call
 
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Components
-ZSH_CONFIG_DIR="$HOME/.config/zsh"
+ZSH_CONFIG_DIR="$XDG_CONFIG_HOME/zsh"
 
 source $ZSH_CONFIG_DIR/functions.sh
 source $ZSH_CONFIG_DIR/aliases.sh
