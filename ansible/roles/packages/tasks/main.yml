@@ -1,6 +1,6 @@
 - name: Install packages
-  package:
-    name: "{{ item.package_name[ansible_facts.distribution] }}" 
-    state: latest
-  when: ansible_facts.distribution in item.package_name
+  include_tasks: fedora.yml
+  when: ansible_facts.distribution in package.os
   loop: "{{ packages }}"
+  loop_control:
+    loop_var: package

@@ -1,33 +1,64 @@
 packages:
   - name: alacritty
-    description: Terminal-Emulator written in Rust
-    package_name:
-      Fedora: alacritty
+    description: Terminal-Emulator written in Rust 
+    os:
+      Fedora:
+        package_name: alacritty
   - name: zsh
     description: zsh shell
-    package_name:
-      Fedora: zsh
+    os:
+      Fedora:
+        package_name: zsh
   - name: tmux
     description: Terminal system monitor
-    package_name:
-      Fedora: htop
+    os:
+      Fedora: 
+        package_name: tmux
+  - name: VS Code
+    description: Text Editor
+    os:
+      Fedora:
+        package_name: code
+        repository:
+          key: https://packages.microsoft.com/keys/microsoft.asc
+          repo_file: files/repos/Fedora/vscode.repo
   - name: vim
     description: Text Editor
-    package_name:
-      Fedora: vim
+    os:
+      Fedora:
+        package_name: vim
   - name: Krusader
     description: Total Commander like file manager
-    package_name:
-      Fedora: krusader
+    os:
+      Fedora:
+        package_name: krusader
   - name: ripgrep
     description: Faster alternative to grep written in Rust
-    package_name:
-      Fedora: ripgrep
+    os:
+      Fedora:
+        package_name: ripgrep
   - name: fd
     description: find alternative written in Rust
-    package_name:
-      Fedora: fd-find
+    os:
+      Fedora:
+        package_name: fd-find
   - name: bat
     description: cat alternative written in Rust
-    package_name:
-      Fedora: bat
+    os:
+      Fedora:
+        package_name: bat
+  - name: mupdf
+    description: Simple pdf Reader
+    os:
+      Fedora:
+        package_name: mupdf
+  - name: foliate
+    description: eBook Reader
+    os:
+      Fedora:
+        package_name: foliate
+  - name: testpackage
+    description: dalsdf
+    os:
+      Ubuntu:
+        package_name: aölldfjöl
