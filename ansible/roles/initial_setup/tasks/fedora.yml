@@ -1,3 +1,9 @@
+- name: Fastest mirror for dnf
+  lineinfile:
+    path: /etc/dnf/dnf.conf
+    regexp: '^fastestmirror='
+    line: 'fastestmirror=true'
+    
 - name: Update system
   dnf:
     name: '*' 
