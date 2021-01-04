@@ -57,8 +57,11 @@ packages:
     os:
       Fedora:
         package_name: foliate
-  - name: testpackage
-    description: dalsdf
+  - name: Brave
+    description: Chromium-based browser
     os:
-      Ubuntu:
-        package_name: aölldfjöl
+      Fedora:
+        package_name: brave-browser
+        repository:
+          key: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+          repo_file: files/repos/Fedora/brave.repo
