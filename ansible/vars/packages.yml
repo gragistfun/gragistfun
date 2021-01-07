@@ -72,3 +72,8 @@ packages:
         package_name: vagrant
         repository:
           repo_file: files/repos/Fedora/hashicorp.repo
+  - name: libvirt
+    description: Virtualization provider
+    os:
+      Fedora:
+        package_name: libvirt
