@@ -10,7 +10,7 @@ packages:
       Fedora:
         package_name: zsh
   - name: tmux
-    description: Terminal system monitor
+    description: Terminal multiplexer
     os:
       Fedora: 
         package_name: tmux
@@ -65,3 +65,10 @@ packages:
         repository:
           key: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
           repo_file: files/repos/Fedora/brave.repo
+  - name: vagrant
+    description: Tool to build and maintain virtual machines
+    os:
+      Fedora:
+        package_name: vagrant
+        repository:
+          repo_file: files/repos/Fedora/hashicorp.repo

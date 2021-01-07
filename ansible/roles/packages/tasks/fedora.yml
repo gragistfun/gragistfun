@@ -4,9 +4,12 @@
       rpm_key:
         key: "{{ package.os.Fedora.repository.key }}"
         state: present
+      when: package.os.Fedora.repository.key is defined
+
     - name: Set repo_file_name variable
       set_fact:
         repo_file_name: "{{ package.os.Fedora.repository.repo_file | basename }}"
+
     - name: Copy .repo file
       copy:
         src: "{{ package.os.Fedora.repository.repo_file }}"
@@ -14,6 +17,7 @@
         owner: root
         group: root
         mode: "0644"
+
     - name: Update dnf cache
       dnf:
         update_cache: yes
