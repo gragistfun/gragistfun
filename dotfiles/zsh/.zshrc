@@ -16,8 +16,6 @@ ZSH_CONFIG_DIR="$XDG_CONFIG_HOME/zsh"
 source $ZSH_CONFIG_DIR/functions.sh
 source $ZSH_CONFIG_DIR/aliases.sh
 
-export PATH="$PATH:$ZSH_CONFIG_DIR/scripts"
-
 # Completion
 source $ZSH_CONFIG_DIR/completion.sh
 
