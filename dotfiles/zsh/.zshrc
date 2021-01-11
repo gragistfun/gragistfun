@@ -41,3 +41,13 @@ source $ZSH_CONFIG_DIR/exports.sh
 for plugin_file in $ZSH_CONFIG_DIR/plugins/*; do
 	source  $plugin_file
 done
+
+# Tmux
+if ! tmux has-session 2>/dev/null \
+   && [ -n "$PS1" ] \
+   && [[ ! "$TERM" =~ screen ]] \
+   && [[ ! "$TERM" =~ tmux ]] \
+   && [ -z "$TMUX" ] \
+   && command -v tmux &> /dev/null ; then
+	  exec tmux
+fi
