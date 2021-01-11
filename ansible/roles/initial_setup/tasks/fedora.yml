@@ -46,4 +46,3 @@
       service:
         name: dnf-automatic.timer
         enabled: yes
-  tags: testing
