@@ -27,3 +27,23 @@
       loop:
         - '@core'
         - '@sound-and-video'
+
+- name: Setup auto updates
+  block:
+    - name: Install dnf-automatic
+      dnf:
+        name: dnf-automatic
+        state: present
+
+    - name: Copy automatic.conf file 
+      copy:
+        src: automatic.conf
+        dest: /etc/dnf/automatic.conf
+        owner: root
+        group: root
+    
+    - name: Enable dnf-automatic service
+      service:
+        name: dnf-automatic.timer
+        enabled: yes
+  tags: testing
