@@ -36,3 +36,8 @@ export PROMPT='$(pwd_abbreviation --zsh) \$ '
 
 # Exports
 source $ZSH_CONFIG_DIR/exports.sh
+
+# Plugins
+for plugin_file in $ZSH_CONFIG_DIR/plugins/*; do
+	source  $plugin_file
+done
