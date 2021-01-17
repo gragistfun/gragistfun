@@ -52,5 +52,5 @@ if ! tmux has-session 2>/dev/null \
    && [[ ! "$TERM" =~ tmux ]] \
    && [ -z "$TMUX" ] \
    && command -v tmux &> /dev/null ; then
-	  exec tmux
+	  exec tmux -u
 fi
