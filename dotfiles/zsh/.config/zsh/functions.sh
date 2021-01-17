@@ -32,3 +32,11 @@ function git() {
     command git "$@"
   fi
 }
+
+function json() {
+  if [ "$1" = -g -o "$1" = --grep ]; then
+    command gron
+  else
+    command jq "$@"
+  fi
+}
