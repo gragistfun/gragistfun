@@ -57,6 +57,16 @@ packages:
     os:
       Fedora:
         package_name: foliate
+  - name: jq
+    description: Command-line JSON processor
+    os:
+      Fedora:
+        package_name: jq
+  - name: gron
+    description: Tool for making json greppable
+    os:
+      Fedora:
+        package_name: gron
   - name: Brave
     description: Chromium-based browser
     os:
