@@ -42,6 +42,9 @@ for plugin_file in $ZSH_CONFIG_DIR/plugins/*; do
 	source  $plugin_file
 done
 
+# Preserve standard shell keybindings like C-a and C-r
+bindkey -e
+
 # Tmux
 if ! tmux has-session 2>/dev/null \
    && [ -n "$PS1" ] \
