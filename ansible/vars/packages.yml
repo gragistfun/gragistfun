@@ -14,6 +14,11 @@ packages:
     os:
       Fedora: 
         package_name: tmux
+  - name: wmctrl
+    description: Command line tool to interact with an X Window Manager
+    os:
+      Fedora:
+        package_name: wmctrl
   - name: VS Code
     description: Text Editor
     os:
