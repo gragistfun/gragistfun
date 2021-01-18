@@ -1,7 +1,7 @@
 echo "PREREQUISITES:"
 if [ -f /etc/fedora-release ]; then
     echo "Running prerequisites for FEDORA"
-    sudo dnf -y install ansible
+    sudo dnf -y install git ansible
 else
     echo "ERROR: Script does not support OS or distribution!"
 fi
