@@ -1,0 +1,18 @@
+{
+  // GENERAL LAYOUT AND LOOK
+  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  //
+  // PYTHON
+  "python.showStartPage": false,
+  //
+  // VIM
+  "vim.foldfix": true,
+  //
+  //FIXES
+  "keyboard.dispatch": "keyCode", // makes esc remap work
+  //
+  //------------------------------------------------------------------------
+}
