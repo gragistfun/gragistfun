@@ -1,0 +1,28 @@
+extensions:
+- name: Vim
+  description: Vim keybindings for VSCode
+  extension_name: vscodevim.vim
+- name: Python
+  description: Python support
+  extension_name: ms-python.python
+- name: Bracket Pair Colorizer 2
+  description: Colorizing matching brackets
+  extension_name: CoenraadS.bracket-pair-colorizer-2
+- name: Code Spell Checker
+  description: Spell checker
+  extension_name: streetsidesoftware.code-spell-checker
+- name: Path Intellisense
+  description: Autocompletion for filenames
+  extension_name: christian-kohler.path-intellisense
+- name: YAML
+  description: yaml support
+  extension_name: redhat.vscode-yaml
+- name: Prettier
+  description: Code formatter using prettier
+  extension_name: esbenp.prettier-vscode
+- name: Community Material Theme
+  description: Material color scheme
+  extension_name: equinusocio.vsc-community-material-theme
+- name: Material Icon Theme
+  description: Material icon scheme
+  extension_name: pkief.material-icon-theme
