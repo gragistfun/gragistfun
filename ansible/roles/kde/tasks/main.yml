@@ -1,0 +1,15 @@
+- name: Krohnkite
+  block:
+    - name: Get install script
+      get_url:
+        url: https://github.com/esjeon/krohnkite/releases/download/v0.7/krohnkite-0.7.kwinscript
+        dest: /tmp/krohnkite.kwinscript
+    - name: Install Krohnkite
+      command: plasmapkg2 -t kwinscript -i /tmp/krohnkite.kwinscript
+- name: Copy plasmarc file
+  copy:
+    src: "{{ item }}"
+    dest: "{{ lookup('env', 'HOME') }}/.config/{{ item }}"
+  loop:
+    - kglobalshortcutsrc
+    - plasmarc

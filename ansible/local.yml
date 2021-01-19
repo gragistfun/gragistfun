@@ -56,6 +56,15 @@
   
   tags: [sudo]
 
+- name: KDE Setup
+  hosts: localhost
+  connection: local
+
+  roles:
+  - kde
+  
+  tags: [initial, kde]
+
 - name: VSCode Extensions
   hosts: localhost
   connection: local
