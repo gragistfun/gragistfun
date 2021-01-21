@@ -1,3 +1,16 @@
+- name: Disable system beep
+  block:
+    - name: Disable sytem beep in inputrc file
+      lineinfile:
+        path: /etc/inputrc
+        regexp: '^\s*#*\s*set bell-style'
+        line: "set bell-style none"
+    - name: Blacklist pcspkr driver
+      lineinfile:
+        path: /etc/modprobe.d/pcspkr-blacklist.conf
+        line: "blacklist pcspkr"
+        create: yes
+
 - name: Fedora specific setup
   include_tasks: fedora.yml
   when: ansible_facts.distribution == 'Fedora'
