@@ -1,0 +1,7 @@
+parameters:
+- {file: "plasmarc", groups: ["Theme"], key: "name" , value: "breeze-dark"}
+- {file: "kdeglobals", groups: ["Icons"], key: "Theme" , value: "breeze-dark"}
+- {file: "kscreenlockerrc", groups: ["Greeter", "LnF", "General"], key: "showMediaControls" , value: "false"}
+- {file: "kscreenlockerrc", groups: ["Greeter", "Wallpaper", "org.kde.image", "General"], key: "Image" , value: "$HOME/.setup/assets/wallpapers/water_I.jpg"}
+- {file: "plasma-org.kde.plasma.desktop-appletsrc", groups: ["Containments", "1", "Wallpaper", "org.kde.image", "General"], key: "Image" , value: "file:///$HOME/.setup/assets/wallpapers/mountains_III.jpg"}
+- {file: "plasma-org.kde.plasma.desktop-appletsrc", groups: ["Containments", "2"], key: "location" , value: "3"}

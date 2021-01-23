@@ -6,10 +6,20 @@
         dest: /tmp/krohnkite.kwinscript
     - name: Install Krohnkite
       command: plasmapkg2 -t kwinscript -i /tmp/krohnkite.kwinscript
+    - name: Enable Krohnkite
+      command: kwriteconfig5 --file kwinrc --group Plugins --key krohnkiteEnabled true
+
 - name: Copy plasmarc file
   copy:
     src: "{{ item }}"
     dest: "{{ lookup('env', 'HOME') }}/.config/{{ item }}"
   loop:
     - kglobalshortcutsrc
-    - plasmarc
+
+- name: Configure KDE
+  block:
+    - include_vars:
+        file: kde_config.yml
+        name: kde_configs
+    - shell: "kwriteconfig5 --file {{ item.file }} {{ item.groups | map('regex_replace', '^', '--group ') | join(' ') }} --key {{ item.key }} {{ item.value }}"
+      loop: "{{ kde_configs.parameters }}"
