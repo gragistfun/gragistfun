@@ -9,5 +9,7 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g P='| less'
 
+alias vim=nvim
+
 alias plan="code -n $HOME/Cloud/plan/plan.md"
 alias dotfiles="code -n $HOME/.setup"
