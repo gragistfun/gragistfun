@@ -32,6 +32,11 @@ packages:
     os:
       Fedora:
         package_name: vim
+  - name: neovim
+    description: Text Editor
+    os:
+      Fedora:
+        package_name: neovim
   - name: Krusader
     description: Total Commander like file manager
     os:
