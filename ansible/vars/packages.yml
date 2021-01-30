@@ -77,6 +77,11 @@ packages:
     os:
       Fedora:
         package_name: gron
+  - name: Chromium
+    description: Browser
+    os:
+      Fedora:
+        package_name: chromium
   - name: Brave
     description: Chromium-based browser
     os:
