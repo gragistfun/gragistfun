@@ -37,6 +37,11 @@ packages:
     os:
       Fedora:
         package_name: neovim
+  - name: podman
+    description: Docker alternative
+    os:
+      Fedora: 
+        package_name: podman
   - name: Krusader
     description: Total Commander like file manager
     os:
