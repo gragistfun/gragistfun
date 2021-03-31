@@ -11,7 +11,8 @@
   // VIM
   "vim.foldfix": true,
   //
-  //FIXES
+  // MISC
+  "telemetry.enableTelemetry": false,
   "keyboard.dispatch": "keyCode",// makes esc remap work
   //
   //------------------------------------------------------------------------
