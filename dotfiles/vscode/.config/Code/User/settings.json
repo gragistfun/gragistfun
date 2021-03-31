@@ -1,6 +1,6 @@
 {
   // GENERAL LAYOUT AND LOOK
-  "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+  "workbench.sideBar.location": "right",
   "workbench.iconTheme": "material-icon-theme",
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
@@ -12,7 +12,8 @@
   "vim.foldfix": true,
   //
   //FIXES
-  "keyboard.dispatch": "keyCode", // makes esc remap work
+  "keyboard.dispatch": "keyCode",// makes esc remap work
   //
   //------------------------------------------------------------------------
+  "": "",//spacer
 }
