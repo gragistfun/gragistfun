@@ -9,3 +9,5 @@ vim.opt.scrolloff = 5
 
 vim.opt.autoindent = true
 vim.opt.linebreak = false
+
+require('plugins')
