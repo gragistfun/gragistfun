@@ -18,4 +18,9 @@ return require('packer').startup(function()
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
 
+  -- File Explorer
+  use {	  
+    'kyazdani42/nvim-tree.lua',
+    requires = {{'kyazdani42/nvim-web-devicons'}}
+  }
 end)
