@@ -34,3 +34,6 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", { silent = true })
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", { silent = true })
 keymap("n", "<leader>fc", ":Telescope git_commits<CR>", { silent = true })
 
+-- File Explorer
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
+
