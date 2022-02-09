@@ -12,7 +12,6 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- Telescope
   use {	  
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
@@ -23,4 +22,17 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = {{'kyazdani42/nvim-web-devicons'}}
   }
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
+
+  -- Utilities
+  use 'jiangmiao/auto-pairs'
+  use 'tpope/vim-surround'
+
 end)
+

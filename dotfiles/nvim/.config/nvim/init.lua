@@ -1,5 +1,3 @@
 require('user.options')
-
--- Plugings
-require('plugins')
+require('user.plugins')
 
