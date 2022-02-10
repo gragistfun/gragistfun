@@ -43,6 +43,14 @@ return require('packer').startup(function()
     end
   }
 
+  -- Colors
+  use {'dracula/vim',
+    as = 'dracula',
+    config = function()
+        vim.cmd([[colorscheme dracula]])
+    end
+  }
+
   -- Utilities
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'
