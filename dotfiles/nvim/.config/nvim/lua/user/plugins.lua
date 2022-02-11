@@ -73,6 +73,7 @@ return require('packer').startup(function()
   -- Utilities
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'
+  use "lukas-reineke/indent-blankline.nvim"
 
 end)
 
