@@ -12,6 +12,9 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Optimization
+  use 'lewis6991/impatient.nvim'
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
