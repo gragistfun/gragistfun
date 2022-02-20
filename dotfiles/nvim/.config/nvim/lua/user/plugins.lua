@@ -15,6 +15,10 @@ return require('packer').startup(function()
   -- Optimization
   use 'lewis6991/impatient.nvim'
 
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
