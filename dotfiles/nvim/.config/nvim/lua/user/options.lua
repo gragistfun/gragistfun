@@ -1,6 +1,8 @@
 local o = vim.opt
 
 -- Global options
+o.mouse = 'a'
+
 o.hidden = true
 
 o.backup = false
@@ -12,7 +14,9 @@ o.termguicolors = true
 
 o.number = true
 o.relativenumber = true
+o.signcolumn = 'yes'
 o.scrolloff = 5
+o.showmode = false
 
 o.autoindent = true
 o.smartindent = true
@@ -26,3 +30,5 @@ o.expandtab = true
 
 o.cursorline = true
 
+o.splitbelow = true
+o.splitright = true
