@@ -1,6 +1,9 @@
 [init]
     defaultBranch = 'main'
 
+[commit]
+    verbose = true
+
 [alias]
 	st = status
 	unstage = restore --staged
