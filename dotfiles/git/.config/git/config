@@ -11,9 +11,17 @@
 [help]
 	autocorrect = 0
 
+[status]
+    relativePaths = false
+    branch = true
+    showStash = true
+
 [color "status"]
     added = green
     changed = yellow
     deleted = red
     untracked = cyan
+
+[advice]
+    statusHints = false
 
