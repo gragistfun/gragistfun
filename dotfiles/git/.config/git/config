@@ -8,3 +8,10 @@
 
 [help]
 	autocorrect = 0
+
+[color "status"]
+    added = green
+    changed = yellow
+    deleted = red
+    untracked = cyan
+
