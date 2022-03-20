@@ -5,7 +5,7 @@ end
 function git
     switch $argv[1]
     case ""
-        command git status -sb --show-stash
+        command git status
         return
     case "root"
         cd (git rev-parse --show-toplevel)
