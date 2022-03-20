@@ -5,7 +5,6 @@
     verbose = true
 
 [alias]
-	st = status
 	unstage = restore --staged
 	relate-to = log --follow --
 
