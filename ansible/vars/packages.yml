@@ -9,6 +9,11 @@ packages:
     os:
       Fedora:
         package_name: zsh
+  - name: fish
+    description: fish shell
+    os:
+      Fedora:
+        package_name: fish
   - name: tmux
     description: Terminal multiplexer
     os:
