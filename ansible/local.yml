@@ -60,4 +60,4 @@
     loop: "{{ vscode_extensions.extensions }}"
     changed_when: result.stdout is not search('is already installed.')
   
-  tags: [vscode]
+  tags: [vscode, never]
