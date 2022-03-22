@@ -23,7 +23,7 @@
         update_cache: yes
   when: package.os.Fedora.repository is defined
 
-- name: Install package
+- name: "Install package {{ package.os.Fedora.package_name }}"
   dnf:
     name: "{{ package.os.Fedora.package_name }}"
     state: present
