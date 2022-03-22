@@ -35,27 +35,6 @@
       vars:
         blacklist: []
 
-- name: Change shell to zsh
-  hosts: localhost
-  connection: local
-
-  vars:
-    shell_path: /usr/bin/zsh
-
-  tasks:
-  - name: Check if shell exists
-    stat:
-      path: "{{ shell_path }}"
-    register: shell_stats
-
-  - user:
-      name: "{{ ansible_user_id }}"
-      shell: "{{ shell_path }}"
-    become: yes
-    when: shell_stats.stat.exists
-  
-  tags: [sudo]
-
 - name: KDE Setup
   hosts: localhost
   connection: local
