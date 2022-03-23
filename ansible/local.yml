@@ -30,10 +30,31 @@
   hosts: localhost
   connection: local
 
-  roles:
-    - role: dotfiles
-      vars:
-        blacklist: []
+  vars:
+    dotfile_dir: "$HOME/.setup/dotfiles"
+    target_dir: "$HOME"
+    dotfiles:
+      - bash
+      - fish
+      - git
+      - jumpapp
+      - kde
+      - nvim
+      - tmux
+      - xmodmap
+
+  tasks:
+    - name: Install stow
+      package:
+        name: stow
+        state: present
+      become: yes
+
+    - name: Run stow
+      shell: "stow -d {{ dotfile_dir }} -t {{ target_dir }} -S {{ item }}"
+      loop: "{{ dotfiles }}"
+
+  tags: [sudo, dotfiles]
 
 - name: KDE Setup
   hosts: localhost
