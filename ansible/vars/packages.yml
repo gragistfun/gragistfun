@@ -67,6 +67,11 @@ packages:
     os:
       Fedora:
         package_name: bat
+  - name: skim
+    description: Fuzzy finder
+    os:
+      Fedora:
+        package_name: skim
   - name: mupdf
     description: Simple pdf Reader
     os:
