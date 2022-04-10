@@ -1,0 +1,42 @@
+---
+- name: Ensure '~/.local/builds' dir exists
+  ansible.builtin.file:
+    name: "{{ ansible_env['HOME'] }}/.local/builds"
+    state: directory
+
+- name: Install build dependencies
+  ansible.builtin.package:
+    name: "{{ item }}"
+  loop:
+    - git
+    - gcc
+    - make
+  become: yes
+
+- name: Clone keyd repo
+  ansible.builtin.git:
+    repo: https://github.com/rvaiya/keyd
+    dest: "{{ ansible_env['HOME'] }}/.local/builds/keyd"
+    version: master
+  register: git_result
+
+- name: Build keyd
+  community.general.make:
+    chdir: "{{ ansible_env['HOME'] }}/.local/builds/keyd"
+  when: git_result['changed']
+
+- name: Install keyd
+  community.general.make:
+    chdir: "{{ ansible_env['HOME'] }}/.local/builds/keyd"
+    target: install
+  when: git_result['changed']
+  become: yes
+
+- name: Copy config
+  ansible.builtin.copy:
+    src: files/default.conf
+    dest: /etc/keyd/default.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: yes
