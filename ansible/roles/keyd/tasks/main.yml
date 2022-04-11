@@ -30,6 +30,8 @@
     chdir: "{{ keyd_dir }}"
     target: install
   when: git_result['changed']
+  notify:
+    - Restart keyd service
   become: yes
 
 - name: Copy config
@@ -39,6 +41,8 @@
     owner: root
     group: root
     mode: '0644'
+  notify:
+    - Restart keyd service
   become: yes
 
 - name: Enable keyd service

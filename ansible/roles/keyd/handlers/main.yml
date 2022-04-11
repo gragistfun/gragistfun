@@ -1,0 +1,7 @@
+---
+- name: Restart keyd service
+  ansible.builtin.systemd:
+    name: keyd
+    state: restarted
+  when: keyd_enable
+  become: yes
