@@ -40,3 +40,10 @@
     group: root
     mode: '0644'
   become: yes
+
+- name: Enable keyd service
+  ansible.builtin.systemd:
+    name: keyd
+    enabled: yes
+  when: keyd_enable
+  become: yes

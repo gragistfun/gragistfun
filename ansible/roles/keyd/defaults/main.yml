@@ -1,3 +1,4 @@
 ---
 keyd_repo: https://github.com/rvaiya/keyd
 keyd_dir: "{{ ansible_env['HOME'] }}/.local/builds/keyd"
+keyd_enable: no
