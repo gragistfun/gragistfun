@@ -1,7 +1,7 @@
 ---
-- name: Ensure '~/.local/builds' dir exists
+- name: Ensure 'keyd_dir' basedir exists
   ansible.builtin.file:
-    name: "{{ ansible_env['HOME'] }}/.local/builds"
+    name: "{{ keyd_dir | dirname }}"
     state: directory
 
 - name: Install build dependencies
@@ -15,19 +15,19 @@
 
 - name: Clone keyd repo
   ansible.builtin.git:
-    repo: https://github.com/rvaiya/keyd
-    dest: "{{ ansible_env['HOME'] }}/.local/builds/keyd"
+    repo: "{{ keyd_repo }}"
+    dest: "{{ keyd_dir }}"
     version: master
   register: git_result
 
 - name: Build keyd
   community.general.make:
-    chdir: "{{ ansible_env['HOME'] }}/.local/builds/keyd"
+    chdir: "{{ keyd_dir }}"
   when: git_result['changed']
 
 - name: Install keyd
   community.general.make:
-    chdir: "{{ ansible_env['HOME'] }}/.local/builds/keyd"
+    chdir: "{{ keyd_dir }}"
     target: install
   when: git_result['changed']
   become: yes
