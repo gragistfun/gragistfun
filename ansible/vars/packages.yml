@@ -4,11 +4,6 @@ packages:
     os:
       Fedora:
         package_name: alacritty
-  - name: zsh
-    description: zsh shell
-    os:
-      Fedora:
-        package_name: zsh
   - name: fish
     description: fish shell
     os:
