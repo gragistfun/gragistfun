@@ -56,6 +56,26 @@
 
   tags: [sudo, dotfiles]
 
+- name: Setup Syncthing
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: Install syncthing
+      package:
+        name: syncthing
+        state: present
+      become: yes
+
+    - name: Kick-off syncthing
+      systemd:
+        name: syncthing
+        scope: user
+        state: started
+        enabled: yes
+
+  tags: [sudo, syncthing]
+
 - name: KDE Setup
   hosts: localhost
   connection: local
