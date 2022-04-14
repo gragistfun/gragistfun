@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include vscode role
+      include_role:
+        name: vscode
+
+  become: yes

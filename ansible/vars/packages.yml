@@ -19,14 +19,6 @@ packages:
     os:
       Fedora:
         package_name: wmctrl
-  - name: VS Code
-    description: Text Editor
-    os:
-      Fedora:
-        package_name: code
-        repository:
-          key: https://packages.microsoft.com/keys/microsoft.asc
-          repo_file: files/repos/Fedora/vscode.repo
   - name: vim
     description: Text Editor
     os:

@@ -1,0 +1,13 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: podman
+platforms:
+  - name: fedora-latest
+    image: fedora/fedora:latest
+    dockerfile: Dockerfile.j2
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

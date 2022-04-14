@@ -24,7 +24,7 @@
       packages: "{{ package_config.packages }}"
   
   become: yes
-  tags: [sudo]
+  tags: [sudo, packages]
 
 - name: Link dotfiles
   hosts: localhost
@@ -89,16 +89,9 @@
   hosts: localhost
   connection: local
 
-  tasks:
-  - name: Read extensions file
-    include_vars:
-      file: vscode_extensions.yml
-      name: vscode_extensions
-
-  - name: Install VSCode extension
-    shell: "code --install-extension {{ item.extension_name }}"
-    register: result
-    loop: "{{ vscode_extensions.extensions }}"
-    changed_when: result.stdout is not search('is already installed.')
+  roles:
+    - vscode
   
-  tags: [vscode, never]
+  become: yes
+
+  tags: [sudo, vscode, never]
