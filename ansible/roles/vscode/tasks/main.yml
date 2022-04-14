@@ -2,12 +2,12 @@
 - name: Install VSCode
   block:
     - name: Import key
-      rpm_key:
+      ansible.builtin.rpm_key:
         key: https://packages.microsoft.com/keys/microsoft.asc
         state: present
 
     - name: Copy .repo file
-      copy:
+      ansible.builtin.copy:
         src: vscode.repo
         dest: /etc/yum.repos.d/vscode.repo
         owner: root
@@ -15,7 +15,7 @@
         mode: "0644"
 
     - name: Install code
-      dnf:
+      ansible.builtin.dnf:
         name: code
         state: present
         update_cache: yes
@@ -25,12 +25,12 @@
 - name: Install VSCode extensions
   block:
     - name: Read extensions file
-      include_vars:
+      ansible.builtin.include_vars:
         file: extensions.yml
         name: vscode_extensions
 
     - name: Install VSCode extension
-      shell: "code --install-extension {{ item.extension_name }}"
+      ansible.builtin.command: "code --install-extension {{ item.extension_name }}"
       register: result
       loop: "{{ vscode_extensions.extensions }}"
       changed_when: result.stdout is not search('is already installed.')
