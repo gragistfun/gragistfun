@@ -84,16 +84,6 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- Statusline
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    options = { theme = 'dracula' },
-    config = function()
-        require('lualine').setup()
-    end
-  }
-
   -- Utilities
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-surround'
