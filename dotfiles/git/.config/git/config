@@ -1,0 +1,29 @@
+[init]
+    defaultBranch = main
+
+[commit]
+    verbose = true
+
+[alias]
+    git = !git
+	unstage = restore --staged
+	relate-to = log --follow --
+
+[help]
+	autocorrect = 0
+
+[status]
+    relativePaths = false
+    branch = true
+    showStash = true
+    submoduleSummary = true
+
+[color "status"]
+    added = green
+    changed = yellow
+    deleted = red
+    untracked = cyan
+
+[advice]
+    statusHints = false
+

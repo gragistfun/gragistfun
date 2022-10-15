@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [ -f "$1" ] ; then
+    case "$1" in
+        *.tar.bz2)  tar -xvjf "$1"      ;;
+        *.tar.gz)   tar -xvzf "$1"      ;;
+        *.tar.xz)   tar -xvf "$1"       ;;
+
+        *.bz2)      bunzip2 -v "$1"     ;;
+        *.gz)       gunzip -v "$1"      ;;
+        *.rar)      rar x "$1"          ;;
+        *.tar)      tar -xvf "$1"       ;;
+        *.tbz2)     tar -xvjf "$1"      ;;
+        *.tgz)      tar -xvzf "$1"      ;;
+        *.Z)        uncompress -v "$1"  ;;
+        *.zip)      unzip -v "$1"       ;;
+        *.zst)      unzstd -v "$1"      ;;
+        *.7z)       7z x "$1"           ;;
+
+        *)          1>&2 echo "ERROR! Unknown file type" \
+                        && exit 1     ;;
+    esac
+else
+    echo $(pwd)
+    1>&2 echo "ERROR! File does not exist: $1"
+    exit 2
+fi
