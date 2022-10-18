@@ -30,9 +30,12 @@ return require('packer').startup(function(use)
 
   use 'editorconfig/editorconfig-vim'
 
-  use {	  
-    'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      require 'user.config.telescope'
+    end
   }
 
   -- Completion
