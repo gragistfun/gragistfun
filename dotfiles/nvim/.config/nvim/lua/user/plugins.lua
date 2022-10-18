@@ -22,7 +22,10 @@ return require('packer').startup(function(use)
   -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = ':TSUpdate',
+    config = function()
+      require 'user.config.treesitter'
+    end
   }
 
   use 'editorconfig/editorconfig-vim'
