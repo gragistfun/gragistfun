@@ -54,7 +54,12 @@ return require('packer').startup(function(use)
   }
 
   -- File Explorer
-  use 'nvim-tree/nvim-tree.lua'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      require('user.config.nvim-tree')
+    end
+  }
 
   -- Git
   use 'tpope/vim-fugitive'
