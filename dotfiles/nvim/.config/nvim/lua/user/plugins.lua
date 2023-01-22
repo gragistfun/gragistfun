@@ -16,8 +16,21 @@ return require('packer').startup(function(use)
   use 'lewis6991/impatient.nvim'
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
+
+  use {
+    'neovim/nvim-lspconfig',
+    requires = {
+      -- Mason - LSP Installer
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+
+      -- LSP Status
+      'j-hui/fidget.nvim',
+
+      -- Tooling for Neovim
+      'folke/neodev.nvim',
+    },
+  }
 
   -- Treesitter
   use {
@@ -39,18 +52,19 @@ return require('packer').startup(function(use)
   }
 
   -- Completion
-  use {	  
+  use {
     'hrsh7th/nvim-cmp',
     requires = {
       {'hrsh7th/cmp-buffer'},
       {'hrsh7th/cmp-path'},
       {'hrsh7th/cmp-cmdline'},
+      {'hrsh7th/cmp-nvim-lsp'},
       {'hrsh7th/cmp-nvim-lua'},
       {'lukas-reineke/cmp-rg'},
-    },
-    config = function()
-      require('user.config.cmp')
-    end
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'saadparwaiz1/cmp_luasnip'},
+    }
   }
 
   -- File Explorer
