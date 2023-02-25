@@ -42,8 +42,7 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   pyright = {},
-
-  sumneko_lua = {
+  lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
