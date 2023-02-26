@@ -10,8 +10,6 @@ o.swapfile = false
 o.undodir = '/tmp'
 o.undofile = true
 
-o.termguicolors = true
-
 o.number = true
 o.relativenumber = true
 o.signcolumn = 'yes'
