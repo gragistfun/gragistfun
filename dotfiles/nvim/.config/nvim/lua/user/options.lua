@@ -5,6 +5,8 @@ o.mouse = 'a'
 
 o.hidden = true
 
+o.clipboard = 'unnamedplus'
+
 o.backup = false
 o.swapfile = false
 o.undodir = '/tmp'
