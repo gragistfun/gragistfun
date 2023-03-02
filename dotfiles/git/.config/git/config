@@ -5,9 +5,10 @@
     verbose = true
 
 [alias]
-    git = !git
-	unstage = restore --staged
-	relate-to = log --follow --
+    lg = log --oneline
+    ls = ls-files
+    relate-to = log --follow --
+    unstage = restore --staged
 
 [help]
 	autocorrect = 0
