@@ -4,6 +4,8 @@
 # Reference:
 # https://zsh.sourceforge.io/Doc/Release/Options.html
 
+setopt CORRECT                 # [default] command auto-correction
+setopt CORRECT_ALL             # [default] argument auto-correction
 setopt PROMPT_SUBST # needed for vcs_info
 
 
@@ -62,11 +64,13 @@ zstyle ':completion:*' menu select
 #
 
 alias ...='cd ../..'
-alias cp="cp -riv"
+alias cp="nocorrect cp -riv"
 alias la='ls -A'
 alias ll='ls -lA'
-alias mkdir="mkdir -vp"
-alias mv="mv -iv"
+alias man='nocorrect man'
+alias mkdir="nocorrect mkdir -vp"
+alias mv="nocorrect mv -iv"
+alias sudo='nocorrect sudo'
 alias vi='nvim'
 alias vim='nvim'
 
