@@ -28,6 +28,20 @@ PROMPT='%F{#6272a4}[%T]%f %F{green}%~%f ${vcs_info_msg_0_} ▶ '
 
 
 #
+# ALIASES
+#
+
+alias ...='cd ../..'
+alias cp="cp -riv"
+alias la='ls -A'
+alias ll='ls -lA'
+alias mkdir="mkdir -vp"
+alias mv="mv -iv"
+alias vi='nvim'
+alias vim='nvim'
+
+
+#
 # FUNCTIONS
 #
 
