@@ -87,8 +87,7 @@ function git() {
 }
 
 function reload() {
-    source ~/.zshrc
-    echo 'Config reloaded!'
+    source ~/.zshrc && echo 'Config reloaded!'
 }
 
 
