@@ -226,6 +226,26 @@ if [[ -z "$RPS1" && -z "$RPROMPT" ]]; then
   RPROMPT='$(vi_mode_prompt_info)'
 fi
 
+
+#
+# AUTOSUGGESTIONS
+# 
+# Install system package 'zsh-autosuggestions' or similar
+
+# Source system installed file
+ZSH_AUTOSUGGESTIONS_FILE='/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh'
+if [[ -f $ZSH_AUTOSUGGESTIONS_FILE ]]; then
+    source $ZSH_AUTOSUGGESTIONS_FILE
+fi
+
+# - match the most recent match whose preceding history item matches the
+#   most recently executed command
+# - fall back on suggestion based on what tab-completion would suggest.
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
+
+bindkey '^F' autosuggest-accept
+
+
 #
 # SYNTAX HIGHLIGHTING
 # 
