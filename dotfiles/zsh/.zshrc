@@ -226,3 +226,15 @@ if [[ -z "$RPS1" && -z "$RPROMPT" ]]; then
   RPROMPT='$(vi_mode_prompt_info)'
 fi
 
+#
+# SYNTAX HIGHLIGHTING
+# 
+# Install system package 'zsh-syntax-highlighting' or similar
+# Must be sourced last: https://github.com/zsh-users/zsh-syntax-highlighting#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file
+
+# Source system installed file
+SYNTAX_HIGHLIGHTING_FILE='/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+if [[ -f $SYNTAX_HIGHLIGHTING_FILE ]]; then
+    source $SYNTAX_HIGHLIGHTING_FILE
+fi
+
