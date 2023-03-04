@@ -5,7 +5,7 @@
 export EDITOR='nvim'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
-export PAGER='bat'
+export PAGER='bat -p'
 
 # History
 export HISTFILE="$HOME/.cache/zsh-history"
