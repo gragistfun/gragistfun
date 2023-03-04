@@ -7,15 +7,27 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT='-c'
 export PAGER='bat'
 
+# History
+export HISTFILE="$HOME/.cache/zsh-history"
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
+
 #
 # OPTIONS
 #
 # Reference:
 # https://zsh.sourceforge.io/Doc/Release/Options.html
 
-setopt CORRECT                 # [default] command auto-correction
-setopt CORRECT_ALL             # [default] argument auto-correction
-setopt PROMPT_SUBST # needed for vcs_info
+setopt APPEND_HISTORY          # append to history file on shell exit
+setopt CORRECT_ALL             # argument auto-correction
+setopt CORRECT                 # command auto-correction
+setopt HIST_FIND_NO_DUPS       # don't show dupes when searching
+setopt HIST_IGNORE_DUPS        # do filter contiguous duplicates from history
+setopt HIST_IGNORE_SPACE       # don't record commands starting with a space
+setopt HIST_VERIFY             # confirm history expansion (!$, !!, !foo)
+setopt NO_HIST_IGNORE_ALL_DUPS # don't filter non-contiguous duplicates from history
+setopt PROMPT_SUBST            # enable parameter expansion. needed for vcs_info
+setopt SHARE_HISTORY           # share history across shells
 
 
 #
@@ -190,10 +202,17 @@ zle -N zle-line-finish
 
 bindkey -v
 
+# Insert mode
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
+bindkey '^N' down-history
+bindkey '^P' up-history
 bindkey '^r' history-incremental-search-backward
 bindkey '^w' backward-kill-word
+
+# Normal mode
+bindkey -M vicmd 'j' down-history
+bindkey -M vicmd 'k' up-history
 
 if [[ -z "$MODE_INDICATOR" ]]; then
   MODE_INDICATOR='%B%F{red}<%b<<%f'
