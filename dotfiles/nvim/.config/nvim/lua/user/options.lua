@@ -34,3 +34,9 @@ o.cursorline = true
 
 o.splitbelow = true
 o.splitright = true
+
+o.list = true -- show whitespace
+o.listchars = {
+  trail = '•',
+}
+
