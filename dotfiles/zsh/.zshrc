@@ -243,6 +243,10 @@ fi
 # - fall back on suggestion based on what tab-completion would suggest.
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion)
 
+# ignore history completions for `cd` since it is most likely a relative jump
+# which makes no sense in the changed context
+ZSH_AUTOSUGGEST_HISTORY_IGNORE='cd *'
+
 bindkey '^F' autosuggest-accept
 
 
