@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   use {
     'neovim/nvim-lspconfig',
     requires = {
+      'onsails/lspkind.nvim',
       -- Mason - LSP Installer
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
@@ -60,6 +61,7 @@ return require('packer').startup(function(use)
       {'hrsh7th/cmp-cmdline'},
       {'hrsh7th/cmp-nvim-lsp'},
       {'hrsh7th/cmp-nvim-lua'},
+      {'f3fora/cmp-spell'},
       {'lukas-reineke/cmp-rg'},
       -- Snippets
       {'L3MON4D3/LuaSnip'},
