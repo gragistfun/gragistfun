@@ -18,7 +18,7 @@ keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 keymap("i", "<C-s>", "<ESC> :w<CR>", { noremap = true, silent = true })
 
 -- Remove highlighs
-keymap("n", "<CR>", ":noh<CR><CR>", { noremap = true, silent = true })
+keymap("n", "<ESC>", ":noh<CR>", { noremap = true, silent = true })
 
 -- Don't yank on delete char
 keymap("n", "x", '"_x', { noremap = true, silent = true })
