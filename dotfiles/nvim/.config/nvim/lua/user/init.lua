@@ -1,6 +1,6 @@
 require('user.options')
 require('user.colors')
--- require('user.statusline')
+require('user.statusline')
 require('user.plugins')
 require('user.keymappings')
 require('user.lsp')
