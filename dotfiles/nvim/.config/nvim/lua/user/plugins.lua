@@ -15,8 +15,15 @@ return require('packer').startup(function(use)
   -- Optimization
   use 'lewis6991/impatient.nvim'
 
-  -- LSP
+  -- TMUX integration
+  use({
+    "aserowy/tmux.nvim",
+    config = function()
+      require("tmux").setup()
+    end
+  })
 
+  -- LSP
   use {
     'neovim/nvim-lspconfig',
     requires = {
