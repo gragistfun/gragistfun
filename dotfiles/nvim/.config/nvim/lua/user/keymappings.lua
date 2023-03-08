@@ -4,8 +4,6 @@ local keymap = vim.api.nvim_set_keymap
 
 -- Buffers navigation
 keymap("n", "<space><space>", "<C-^>", { noremap = true, silent = true })
-keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
-keymap("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
 
 -- Better window movement
 keymap("n", "<C-h>", "<C-w>h", { silent = true })
