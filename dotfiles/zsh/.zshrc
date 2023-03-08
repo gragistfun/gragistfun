@@ -91,10 +91,18 @@ alias ll='ls -lA'
 alias man='nocorrect man'
 alias mkdir="nocorrect mkdir -vp"
 alias mv="nocorrect mv -iv"
+alias py='python'
+alias s='sudo'
 alias sudo='nocorrect sudo'
 alias vi='nvim'
 alias vim='nvim'
 
+# Global aliases
+alias -g G='| rg -i'
+alias -g H='| head'
+alias -g P='| bat -p'
+alias -g S='systemctl'
+alias -g T='| tail'
 
 #
 # ALIAS EXPANSION
