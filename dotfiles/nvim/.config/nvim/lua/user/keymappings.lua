@@ -30,6 +30,7 @@ keymap("v", ">", ">gv", { noremap = true, silent = true })
 
 -- Folds
 keymap("n", "<Tab>", "za", { noremap = true, silent = true })
+keymap("n", "<Leader><Tab>", "zi", { noremap = true, silent = true })
 keymap("n", "<Leader>z", "zM", { noremap = true, silent = true })
 keymap("n", "<Leader>Z", "zR", { noremap = true, silent = true })
 
