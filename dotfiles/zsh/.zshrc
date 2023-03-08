@@ -109,6 +109,9 @@ alias -g T='| tail'
 #
 # Adopted form https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/globalias/globalias.plugin.zsh
 
+# Exclude aliases
+GLOBALIAS_FILTER_VALUES=(cp la ll man mkdir mv sudo)
+
 globalias() {
     # Get last word to the left of the cursor:
     # (z) splits into words using shell parsing
