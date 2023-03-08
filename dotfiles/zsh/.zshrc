@@ -180,6 +180,11 @@ function git() {
     fi
 }
 
+function myip {
+    # Get ip address over DNS
+    dig +short myip.opendns.com @resolver1.opendns.com -4
+}
+
 function reload() {
     source ~/.zshrc && echo 'Config reloaded!'
 }
