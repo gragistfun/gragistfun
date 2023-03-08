@@ -23,6 +23,14 @@ o.smartindent = true
 o.wrap = false
 o.ignorecase = true
 
+o.foldmethod = 'expr'
+o.foldexpr = 'nvim_treesitter#foldexpr()'
+o.foldenable = false
+o.foldtext = 'getline(v:foldstart)'
+o.fillchars = {
+    fold = ' '
+}
+
 o.spell = true
 
 o.tabstop = 4

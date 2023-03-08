@@ -30,6 +30,11 @@ keymap("v", "X", '"_X', { noremap = true, silent = true })
 keymap("v", "<", "<gv", { noremap = true, silent = true })
 keymap("v", ">", ">gv", { noremap = true, silent = true })
 
+-- Folds
+keymap("n", "<Tab>", "za", { noremap = true, silent = true })
+keymap("n", "<Leader>z", "zM", { noremap = true, silent = true })
+keymap("n", "<Leader>Z", "zR", { noremap = true, silent = true })
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", { silent = true })
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", { silent = true })
