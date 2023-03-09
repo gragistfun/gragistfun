@@ -2,6 +2,14 @@ vim.g.mapleader = " "
 
 local keymap = vim.api.nvim_set_keymap
 
+-- Automatic center down and up jumps
+keymap("n", "<C-u>", "<C-u>zz", { silent = true })
+keymap("n", "<C-d>", "<C-d>zz", { silent = true })
+
+-- Automatically open folds and center on search jumps
+keymap("n", "n", "nzvzz", { silent = true })
+keymap("n", "N", "Nzvzz", { silent = true })
+
 -- Buffers navigation
 keymap("n", "<space><space>", "<C-^>", { noremap = true, silent = true })
 
