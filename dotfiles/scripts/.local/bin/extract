@@ -14,7 +14,7 @@ if [ -f "$1" ] ; then
         *.tbz2)     tar -xvjf "$1"          ;;
         *.tgz)      tar -xvzf "$1"          ;;
         *.Z)        uncompress -v "$1"      ;;
-        *.zip)      unzip -v "$1"           ;;
+        *.zip)      unzip "$1"              ;;
         *.zst)      unzstd -v "$1"          ;;
         *.7z)       7z x "$1"               ;;
 
