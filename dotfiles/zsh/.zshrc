@@ -45,7 +45,11 @@ autoload -Uz vcs_info
 
 precmd() { vcs_info }
 
-zstyle ':vcs_info:git:*' formats '(%b)'
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats "(%F{green}%u%c%b%f)"
+zstyle ':vcs_info:*' stagedstr "%F{yellow}"
+zstyle ':vcs_info:*' unstagedstr "%F{red}"
+zstyle ':vcs_info:*' check-for-changes true
 
 PROMPT='%F{#6272a4}[%T]%f %F{green}%~%f ${vcs_info_msg_0_} ▶ '
 
