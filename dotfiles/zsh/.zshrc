@@ -60,10 +60,12 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 }
 
 function prompt {
+    echo ''                         # newline
     echo -n '%F{#6272a4}[%T]%f '    # current time (purple)
     echo -n '%F{green}%~%f '        # current path (green)
     echo -n "${vcs_info_msg_0_} "   # version control info
-    echo -n '▶ '                    # unicode prompt symbol (for tmux jump to last prompt)
+    echo ''                         # newline
+    echo -n ' ▶ '                   # unicode prompt symbol (for tmux jump to last prompt)
 }
 
 PROMPT='$(prompt)'
