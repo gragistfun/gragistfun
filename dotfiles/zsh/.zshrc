@@ -278,18 +278,6 @@ bindkey '^w' backward-kill-word
 bindkey -M vicmd 'j' down-history
 bindkey -M vicmd 'k' up-history
 
-if [[ -z "$MODE_INDICATOR" ]]; then
-  MODE_INDICATOR='%B%F{red}<%b<<%f'
-fi
-
-function vi_mode_prompt_info() {
-  echo "${${VI_KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/$INSERT_MODE_INDICATOR}"
-}
-
-if [[ -z "$RPS1" && -z "$RPROMPT" ]]; then
-  RPROMPT='$(vi_mode_prompt_info)'
-fi
-
 
 #
 # AUTOSUGGESTIONS
