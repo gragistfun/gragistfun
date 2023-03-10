@@ -156,6 +156,15 @@ bindkey -M isearch " " magic-space
 
 
 #
+# ZOXIDE SETUP
+#
+
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+
+
+#
 # FUNCTIONS
 #
 
