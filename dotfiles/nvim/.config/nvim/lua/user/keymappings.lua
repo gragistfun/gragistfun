@@ -2,6 +2,11 @@ vim.g.mapleader = " "
 
 local keymap = vim.api.nvim_set_keymap
 
+-- Insert mode mappings
+keymap("i", "<C-a>", "<C-o>I", { silent = true })
+keymap("i", "<C-e>", "<C-o>A", { silent = true })
+keymap("i", "<C-k>", "<C-o>d$", { silent = true })
+
 -- Automatic center down and up jumps
 keymap("n", "<C-u>", "<C-u>zz", { silent = true })
 keymap("n", "<C-d>", "<C-d>zz", { silent = true })
