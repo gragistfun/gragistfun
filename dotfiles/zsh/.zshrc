@@ -59,10 +59,17 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
   fi
 }
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt added by activate script
+
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo "($(basename $VIRTUAL_ENV)) "
+}
+
 function prompt {
     echo ''                             # newline
     echo -n '%F{#6272a4}[%T]%f '        # current time (purple)
     echo -n '%F{magenta}%~%f '          # current path (green)
+    echo -n "$(virtualenv_info)"        # virtual env indicator
     echo -n "${vcs_info_msg_0_} "       # version control info
     echo -n "%F{yellow}%(1j.[%j].)%f "  # indicate background jobs
     echo ''                             # newline
