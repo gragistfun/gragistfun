@@ -43,8 +43,6 @@ colors
 # Version control
 autoload -Uz vcs_info
 
-precmd() { vcs_info }
-
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats "(%F{green}%u%c%b%m%f)"
 zstyle ':vcs_info:*' actionformats "(%F{cyan}%b%m|%a%f)"
@@ -77,6 +75,16 @@ function prompt {
 }
 
 PROMPT='$(prompt)'
+
+
+#
+# HOOKS
+#
+
+autoload -Uz add-zsh-hook
+
+add-zsh-hook precmd vcs_info
+
 
 #
 # COMPLETION
