@@ -83,7 +83,28 @@ PROMPT='$(prompt)'
 
 autoload -Uz add-zsh-hook
 
+# get version control info
 add-zsh-hook precmd vcs_info
+
+
+# print exit code on error 
+
+# track command execution so that exit code is only printed once after last
+# command output
+function track-exec-command() {
+  zsh_exec_command=1
+}
+
+function print-exit-code() {
+    local -i exit_code=$?
+    if [[ exit_code -ne 0 && zsh_exec_command -eq 1 ]]; then
+        echo "↳ $fg[red]$exit_code"
+        unset zsh_exec_command
+    fi
+}
+
+add-zsh-hook preexec track-exec-command
+add-zsh-hook precmd print-exit-code
 
 
 #
