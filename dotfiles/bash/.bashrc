@@ -14,10 +14,10 @@ export PATH
 
 # Start tmux session
 if ! tmux has-session 2>/dev/null \
-   && [ -n "$PS1" ] \
-   && [[ ! "$TERM" =~ screen ]] \
-   && [[ ! "$TERM" =~ tmux ]] \
-   && [ -z "$TMUX" ] \
-   && command -v tmux &> /dev/null ; then
-	  exec tmux -u
+           && [ -n "$PS1" ] \
+           && [[ ! "$TERM" =~ screen ]] \
+           && [[ ! "$TERM" =~ tmux ]] \
+           && [ -z "$TMUX" ] \
+           && command -v tmux &> /dev/null ; then
+    exec tmux new-session -s HOME
 fi
