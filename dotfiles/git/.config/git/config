@@ -1,3 +1,6 @@
+[core]
+    pager = delta
+
 [init]
     defaultBranch = main
 
@@ -12,13 +15,19 @@
     unstage = restore --staged
 
 [help]
-	autocorrect = 0
+    autocorrect = 0
 
 [status]
     relativePaths = false
     branch = true
     showStash = true
     submoduleSummary = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
 
 [color "status"]
     added = green
@@ -28,4 +37,11 @@
 
 [advice]
     statusHints = false
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    syntax-theme = 'Dracula'
+    navigate = true    # use n and N to move between diff sections
 
