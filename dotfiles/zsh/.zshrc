@@ -319,6 +319,7 @@ bindkey '^N' down-history
 bindkey '^P' up-history
 bindkey '^r' history-incremental-search-backward
 bindkey '^w' backward-kill-word
+bindkey '^k' kill-line
 
 # Normal mode
 bindkey -M vicmd 'j' down-history
