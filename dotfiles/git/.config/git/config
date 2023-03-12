@@ -5,6 +5,7 @@
     verbose = true
 
 [alias]
+    git = !git # typo tolerant: git git ... -> git ...
     lg = log --oneline
     ls = ls-files
     relate-to = log --follow --
