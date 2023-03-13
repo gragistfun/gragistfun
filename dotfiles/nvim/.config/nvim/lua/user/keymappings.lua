@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 -- Insert mode mappings
 keymap("i", "<C-a>", "<C-o>I", { silent = true })
