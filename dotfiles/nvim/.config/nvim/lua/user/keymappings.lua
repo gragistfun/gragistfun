@@ -18,6 +18,12 @@ keymap("n", "N", "Nzvzz", { silent = true })
 -- Buffers navigation
 keymap("n", "<space><space>", "<C-^>", { noremap = true, silent = true })
 
+-- Scroll without cursor movement
+keymap("n", "<Up>", "<C-y>", { silent = true })
+keymap("n", "<Down>", "<C-e>", { silent = true })
+keymap("i", "<Up>", "<C-o><C-y>", { silent = true })
+keymap("i", "<Down>", "<C-o><C-e>", { silent = true })
+
 -- Better window movement
 keymap("n", "<C-h>", "<C-w>h", { silent = true })
 keymap("n", "<C-j>", "<C-w>j", { silent = true })
