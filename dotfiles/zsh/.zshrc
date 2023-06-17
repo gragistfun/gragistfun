@@ -312,6 +312,9 @@ function zle-line-finish() {
     typeset -g VI_KEYMAP=main
     (( ! ${+terminfo[rmkx]} )) || echoti rmkx
     _vi-mode-set-cursor-shape-for-keymap default
+
+    # reset prompt so that the displayed time is the starting time of the execution
+    zle reset-prompt
 }
 zle -N zle-line-finish
 
