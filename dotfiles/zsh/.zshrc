@@ -166,15 +166,16 @@ alias -g T='| tail'
 #
 # Adopted form https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/globalias/globalias.plugin.zsh
 
-# Exclude aliases
-GLOBALIAS_FILTER_VALUES=(cp la ll man mkdir mv sudo)
+# List of aliases to expand
+GLOBALIAS_FILTER_VALUES=(py s vi vim 'G' 'H' 'P' 'S' 'T')
 
 globalias() {
     # Get last word to the left of the cursor:
     # (z) splits into words using shell parsing
     # (A) makes it an array even if there's only one element
+    # (Ie) exact match
     local word=${${(Az)LBUFFER}[-1]}
-    if [[ $GLOBALIAS_FILTER_VALUES[(Ie)$word] -eq 0 ]]; then
+    if (( $GLOBALIAS_FILTER_VALUES[(Ie)$word] )); then
         zle _expand_alias
         zle expand-word
     fi
