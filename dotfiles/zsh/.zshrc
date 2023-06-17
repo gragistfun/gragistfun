@@ -205,6 +205,10 @@ fi
 # FUNCTIONS
 #
 
+function activate() {
+    source ./venv/bin/activate
+}
+
 function ccd() {
     mkdir "$1" && cd "$1"
 }
