@@ -144,7 +144,7 @@ zstyle ':completion:*' menu select
 alias ...='cd ../..'
 alias cp="nocorrect cp -riv"
 alias la='ls -A'
-alias ll='ls -lA'
+alias ll='ls -lAh'
 alias man='nocorrect man'
 alias mkdir="nocorrect mkdir -vp"
 alias mv="nocorrect mv -iv"
