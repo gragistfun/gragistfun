@@ -28,7 +28,9 @@ subcommand_error() {
 parse_subcommands() {
     subcommand=""
     case "$1" in
-        help | '')    print_help            ;;
+        help | '')    
+            print_help
+            exit 0 ;;
         info)         subcommand="info"     ;;
         install)      subcommand="install"  ;;
         provides)     subcommand="provides" ;;
