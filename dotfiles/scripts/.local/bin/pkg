@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
 set -e
 
+help_message='
+usage: pkg COMMAND
+
+Script to unify package management across different Linux distributions.
+
+Commands:
+help        display this message
+info        display details about package[s]
+install     install package[s] on your system
+provides    find what package provides the given value
+search      search package details for the given string
+upgrade     upgrade package[s] on your system
+'
+
+print_help() {
+    echo -n "$help_message"
+}
+
 subcommand_error() {
     echo "ERROR: subcommand not supported" 2>1
     exit 1
@@ -9,11 +27,12 @@ subcommand_error() {
 parse_subcommands() {
     subcommand=""
     case "$1" in
-        info)     subcommand="info"    ;;
-        install)  subcommand="install" ;;
-        provides) subcommand="provides" ;;
-        search)   subcommand="search"  ;;
-        upgrade)  subcommand="upgrade" ;;
+        help | '')    print_help            ;;
+        info)         subcommand="info"     ;;
+        install)      subcommand="install"  ;;
+        provides)     subcommand="provides" ;;
+        search)       subcommand="search"   ;;
+        upgrade)      subcommand="upgrade"  ;;
         *)
             echo "ERROR! : Unknown subcommand '$1'"
             exit 1 ;;
