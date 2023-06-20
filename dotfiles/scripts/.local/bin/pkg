@@ -39,6 +39,7 @@ parse_subcommands() {
         upgrade)      subcommand="upgrade"  ;;
         *)
             echo "ERROR! : Unknown subcommand '$1'"
+            print_help
             exit 1 ;;
     esac
 }
