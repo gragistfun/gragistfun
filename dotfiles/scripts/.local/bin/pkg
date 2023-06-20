@@ -11,6 +11,7 @@ help        display this message
 info        display details about package[s]
 install     install package[s] on your system
 provides    find what package provides the given value
+remove      remove package[s] on your system
 search      search package details for the given string
 upgrade     upgrade package[s] on your system
 '
@@ -31,6 +32,7 @@ parse_subcommands() {
         info)         subcommand="info"     ;;
         install)      subcommand="install"  ;;
         provides)     subcommand="provides" ;;
+        remove)       subcommand="remove"   ;;
         search)       subcommand="search"   ;;
         upgrade)      subcommand="upgrade"  ;;
         *)
@@ -49,6 +51,7 @@ set_package_manager() {
                     info)          pacman -Si "${@:2}"  ;;
                     install)  sudo pacman -Sy "${@:2}"  ;;
                     provides)      pacman -Fy "${@:2}"  ;;
+                    remove)   sudo pacman -Rs "${@:2}"  ;;
                     search)        pacman -Sys "${@:2}" ;;
                     upgrade)  sudo pacman -Syu          ;;
                 esac
@@ -59,6 +62,7 @@ set_package_manager() {
                     info)          dnf info "${@:2}"     ;;
                     install)  sudo dnf install "${@:2}"  ;;
                     provides)      dnf provides "${@:2}" ;;
+                    remove)   sudo dnf remove "${@:2}"   ;;
                     search)        dnf search "${@:2}"   ;;
                     upgrade)  sudo dnf upgrade           ;;
                 esac
@@ -69,6 +73,7 @@ set_package_manager() {
                     info)          zypper info "${@:2}"                 ;;
                     install)  sudo zypper install "${@:2}"              ;;
                     provides)      zypper search --provides -x "${@:2}" ;;
+                    remove)   sudo zypper remove "${@:2}"               ;;
                     search)        zypper search "${@:2}"               ;;
                     upgrade)  sudo zypper update                        ;;
                 esac
@@ -79,6 +84,7 @@ set_package_manager() {
                     info)          apt info "${@:2}"              ;;
                     install)  sudo apt install "${@:2}"           ;;
                     provides)      subcommand_error               ;;
+                    remove)   sudo apt remove "${@:2}"            ;;
                     search)        apt search "${@:2}"            ;;
                     upgrade)  sudo apt update && sudo apt upgrade ;;
                 esac
